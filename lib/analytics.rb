@@ -7,13 +7,12 @@ class Analytics
   end
   
   def set_options
-    @options = []
-    @options << { menu_id: 1, menu_title: 'Areas count', method: :how_many }
-    @options << { menu_id: 2, menu_title: 'Smallest Population (non 0)', method: :smallest_pop }
-    @options << { menu_id: 3, menu_title: 'Largest Population', method: :largest_pop }
-    @options << { menu_id: 4, menu_title: 'How many zips in California?', method: :california_zips }
-    @options << { menu_id: 5, menu_title: 'Information for a given zip', method: :zip_info }
-    @options << { menu_id: 6, menu_title: 'Exit', method: :exit }
+    @options = [{ menu_id: 1, menu_title: 'Areas count', method: :how_many },
+      { menu_id: 2, menu_title: 'Smallest Population (non 0)', method: :smallest_pop },
+      { menu_id: 3, menu_title: 'Largest Population', method: :largest_pop },
+      { menu_id: 4, menu_title: 'How many zips in California?', method: :california_zips },
+      { menu_id: 5, menu_title: 'Information for a given zip', method: :zip_info },
+      { menu_id: 6, menu_title: 'Exit', method: :exit }]
   end
   
   def run(choice)
