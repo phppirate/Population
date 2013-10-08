@@ -18,7 +18,7 @@ class Analytics
   
   def run(choice)
     opt = @options.select {|o| o[:menu_id] == choice}.first
-    if opt.nill?
+    if opt.nil?
       print "Invalid choice"
     elsif opt[:method] != :exit
       self.send opt[:method]
@@ -29,14 +29,14 @@ class Analytics
   end
   
   def how_many
-    print "There are #{@area.length} areas"
+    print "There are #{@areas.length} areas"
   end
   
   def smallest_pop
     sorted = @areas.sort do |x, y|
       x.estimated_population <=> y.estimated_population
     end
-    smallest = sorted.drop_while {|i| i.estimated_population}.first
+    smallest = sorted.drop_while {|i| i.estimated_population == 0}.first
     print "#{smallest.city}, #{smallest.state} has the smallest population of #{smallest.estimated_population}"
   end
   
