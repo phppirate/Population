@@ -44,7 +44,7 @@ class Analytics
       x.estimated_population <=> y.estimated_population
     end
     largest = sorted.reverse.drop_while { |i| i.estimated_population == 0 }.first
-    print "#{largest.city}, #{largest.state} has the largest population of #{largest.estimated_population}"
+    print "#{largest.city}, #{largest.zipcode}, #{largest.state} has the largest population of #{largest.estimated_population}"
   end
   
   def california_zips
@@ -57,8 +57,8 @@ class Analytics
     zip = gets.strip.to_i
     zips = @areas.select { |a| a.zipcode == zip }
     unless zips.empty?
-      print ""
-      zips.each { |z| print z }
+      #print ""
+      zips.each { |z| print "\n#{z}" }
     else
       print "Zip not found"
     end
